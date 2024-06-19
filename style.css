@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    font-family: 'Noto Sans SC', sans-serif;
+    overflow: hidden;
+}
+
+.element {
+    cursor: url('монтировка.cur'), auto;
+}
+
+.heart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -100px;
+}
+
+.heart:after {
+    left: -100px;
+}
+
+.heart:focus .text,
+.heart:active .text {
+    display: block; /* Show text on focus or active */
+}
+
+.text {
+    transform: rotate(-45deg);
+    color: rgb(36, 29, 29);
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Noto Sans SC', sans-serif;
+    display: none; /* Initially hidden */
+    z-index: 2;
+    position: relative;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .heart {
+        width: 150px;
+        height: 150px;
+    }
+    .heart:before,
+    .heart:after {
+        width: 150px;
+        height: 150px;
+    }
+    .text {
+        font-size: 16px;
+    }
+}
